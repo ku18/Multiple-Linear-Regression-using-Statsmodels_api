@@ -1,23 +1,24 @@
-Multiple Linear Regression - GPA Prediction
+# 📊 Multiple Linear Regression - GPA Prediction
 
-This project demonstrates how to build a Multiple Linear Regression model using `statsmodels` to predict students' GPA based on their SAT scores and a random feature.
+This notebook explores a multiple linear regression model using SAT scores and a random variable to predict student GPA.
 
-Dataset
+## 🔍 Objective
 
-- CSV: 1.02. Multiple linear regression.csv
-- Features:
-  - SAT
-  - Rand 1,2,3 (random noise)
-- Target:
-  - GPA
+To understand how to interpret regression coefficients, p-values, R² and adjusted R² — and decide which variables to keep.
 
-Objective
+## 📈 Model Summary
 
-- Practice multiple linear regression.
-- Interpret the model output using .summary().
+| Variable     | Coefficient | p-value |
+|--------------|-------------|---------|
+| SAT          | 0.0017      | 0.000   |
+| Rand 1,2,3   | -0.0083     | 0.762   |
 
-Getting Started
+- SAT is significant (p < 0.05) → good predictor.
+- Rand 1,2,3 is **not significant** (p > 0.05) → should be dropped.
 
-bash
-pip install -r requirements.txt
-python multiple_linear_regression.py
+## 🧠 Conclusion
+
+- Even though R² = 0.407, the adjusted R² = 0.392 tells us the second variable adds no value.
+- A **simple linear regression with SAT only** would likely be more effective.
+
+> **Moral**: Always check p-values and adjusted R². Use theory + statistics to build better models.
